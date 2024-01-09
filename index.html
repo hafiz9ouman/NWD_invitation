@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Marriage</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            .simply-countdown {
+            /* The countdown */
+            margin-bottom: 2em;
+            }
+
+            .simply-countdown > .simply-section {
+            /* coutndown blocks */
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: #fd5d5d;
+            margin: 0 4px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 1s ease infinite;
+            }
+
+            .simply-countdown > .simply-section > div {
+            /* countdown block inner div */
+            display: table-cell;
+            vertical-align: middle;
+            height: 100px;
+            width: 100px;
+            }
+
+            .simply-countdown > .simply-section .simply-amount,
+            .simply-countdown > .simply-section .simply-word {
+            display: block;
+            color: white;
+            /* amounts and words */
+            }
+
+            .simply-countdown > .simply-section .simply-amount {
+            font-size: 30px;
+            /* amounts */
+            }
+
+            .simply-countdown > .simply-section .simply-word {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            font-size: 12px;
+            /* words */
+            }
+
+
+            #fh5co-counter .display-t,
+            #fh5co-counter .display-tc,
+            #fh5co-event .display-t,
+            #fh5co-event .display-tc {
+            height: 700px;
+            display: table;
+            width: 100%;
+            }
+            #fh5co-counter .fh5co-heading h2,
+            #fh5co-event .fh5co-heading h2 {
+            color: #fff;
+            }
+            #fh5co-counter .fh5co-heading span,
+            #fh5co-event .fh5co-heading span {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            }
+            #fh5co-counter .overlay,
+            #fh5co-event .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            }
+            @media screen and (max-width: 768px) {
+            #fh5co-counter,
+            #fh5co-event {
+                height: inherit;
+                padding: 7em 0;
+            }
+            #fh5co-counter .display-t,
+            #fh5co-counter .display-tc,
+            #fh5co-event .display-t,
+            #fh5co-event .display-tc {
+                height: inherit;
+            }
+            }
+            #fh5co-counter .event-wrap,
+            #fh5co-event .event-wrap {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            width: 100%;
+            float: left;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            border-radius: 4px;
+            }
+            @media screen and (max-width: 768px) {
+            #fh5co-counter .event-wrap,
+            #fh5co-event .event-wrap {
+                margin-bottom: 10px;
+            }
+            }
+            #fh5co-counter .event-wrap h3,
+            #fh5co-event .event-wrap h3 {
+            font-size: 20px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            display: block;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            }
+            #fh5co-counter .event-wrap p, #fh5co-counter .event-wrap span,
+            #fh5co-event .event-wrap p,
+            #fh5co-event .event-wrap span {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            }
+            #fh5co-counter .event-wrap i,
+            #fh5co-event .event-wrap i {
+            color: white;
+            font-size: 20px;
+            }
+            #fh5co-counter .event-wrap .event-col,
+            #fh5co-event .event-wrap .event-col {
+            width: 50%;
+            float: left;
+            margin-bottom: 30px;
+            }
+
+            #fh5co-counter {
+            height: 600px;
+            }
+            @media screen and (max-width: 768px) {
+            #fh5co-counter {
+                height: auto;
+            }
+            }
+
+        </style>
+    </head>
+
+    <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+
+
+        <!-- Carousel Start -->
+        <div class="container-fluid carousel-header px-0">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
+                        <div class="carousel-caption">
+                            <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px;">
+                                <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">"AND WE CREATED YOU IN PAIRS"</h4>
+                                </div>
+                                <h1 class="display-1 text-capitalize text-white mb-3">Hafiz Nouman</h1>
+                                <h1 class="display-1 text-capitalize text-white mb-3"><i class="fa fa-heart text-primary"></i></h1>
+                                <h1 class="display-1 text-capitalize text-white mb-3">Dil Awaiz</h1>
+                                <!-- <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-0" style="letter-spacing: 3px;">JAN 27 2024</h4>
+                                </div> -->
+                                <!-- <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn btn-primary btn-primary-outline-0 py-3 px-5" href="#">RSVP Now</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+        <!-- Hello! Start -->
+        <div class="container-fluid position-relative py-5" id="weddingAbout">
+            <div class="position-absolute" style="top: -35px; right: 0;">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: -10px; left: 0; transform: rotate(150deg);">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="container position-relative py-5">
+                <div class="mx-auto text-center mt-5 pt-5 mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800;">
+                    <h1 class="text-primary display-1">We invite you to celebrate our wedding</h1>
+                    <!-- <h4 class="text-dark mb-0">We invite you to celebrate our wedding</h4> -->
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="text-end my-auto">
+                                        <h1 class="text-primary mb-3"><strong>Hafiz Nouman</strong></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-heart fa-5x text-primary"></i>
+                               </div>
+                            </div>
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="my-auto">
+                                        <h1 class="text-primary mb-3"><strong>Dil Awaiz</strong></h1>
+                                        <!-- <p class="text-dark mb-0" style="line-height: 30px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy -->
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center p-5">
+                        <div class="simply-countdown simply-countdown-one"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hello! End -->
+
+
+        <!--- Wedding Date -->
+        <div class="container-fluid wedding-date-bg position-relative py-5">
+            <div class="position-absolute" style="top: -100px; right: 0;">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: -80px; left: 0; transform: rotate(150deg);">
+                <img src="img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="container py-5 wow zoomIn" data-wow-delay="0.1s">
+                <div class="wedding-date text-center bg-light p-1" style="border-style: double !important; border: 15px solid rgba(253, 93, 93, 0.5);">
+
+                    <div class="container py-5">
+                        <div class="section-title position-relative text-center">
+                            <h1 class="font-secondary display-5">Wedding Event</h1>
+                            <i class="far fa-heart text-dark mb-3"></i>
+                        </div>
+
+                        
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
+                                    <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double; border-color: black !important;">
+                                        <h1 class="display-5" style="margin-bottom:0rem !important">Baraat</h1>
+                                    </div>
+                                    <p class="mb-2 text-dark fw-bolder fs-5"><i class="far fa-calendar"></i>&nbsp;&nbsp;Jan 27, 2024</p>
+                                    <p class="mb-2 text-dark fw-bolder fs-5"><i class="far fa-clock"></i>&nbsp;&nbsp;6:00PM - 9:00PM</p>
+                                    <p class="mb-0 text-dark fw-bolder fs-5"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Hamza Marque, Rachna Town</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-center text-md-left ml-md-3">
+                                    <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double; border-color: black !important;">
+                                        <h1 class="display-5" style="margin-bottom:0rem !important">Walima</h1>
+                                    </div>
+                                    <p class="mb-2 text-dark fw-bold fs-5"><i class="far fa-calendar"></i>&nbsp;&nbsp;Jan 28, 2024</p>
+                                    <p class="mb-2 text-dark fw-bold fs-5"><i class="far fa-clock"></i>&nbsp;&nbsp;6:00PM - 9:00PM</p>
+                                    <p class="mb-0 text-dark fw-bold fs-5"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Abdullah Marque, Rana Town</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute" style="top: 15%; right: -30px; transform: rotate(320deg); opacity: 0.5; z-index: 1;">
+                        <img src="img/attendance-bg.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="position-absolute" style="top: 15%; left: -10px; transform: rotate(-320deg); opacity: 0.5; z-index: 1;">
+                        <img src="img/attendance-bg.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Wedding Date -->
+
+
+        <!-- Wedding Timeline start -->
+        <div class="container-fluid wedding-timeline bg-secondary position-relative overflow-hidden py-5" id="weddingTimeline">
+            <div class="position-absolute" style="top: 50%; left: -100px; transform: translateY(-50%); opacity: 0.5;">
+                <img src="img/wedding-bg.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: 50%; right: -160px; transform: translateY(-50%); opacity: 0.5; rotate: 335deg;">
+                <img src="img/wedding-bg.png" class="img-fluid" alt="">
+            </div>
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 text-white">Wedding Planing Timeline</h1>
+                </div>
+                <div class="position-relative wedding-content">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-12 col-xl-4">
+                            <div class="text-center p-3 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="mb-4 p-3 d-inline-flex">
+                                    <i class="fa fa-menorah text-primary fa-3x"></i>
+                                </div>
+                                <p class="text-primary">7:00PM - 8:00PM</p>
+                                <h3 class="text-dark">Dinner</h3>
+                                <!-- <p class="text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-xl-4">
+                            <div class="text-center p-3 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="mb-4 p-3 d-inline-flex">
+                                    <img class="text-primary" width="50px" src="img/out.png">
+                                </div>
+                                <p class="text-primary">9:00PM - 10:00PM</p>
+                                <h3 class="text-dark">Rukhsati</h3>
+                                <!-- <p class="text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-xl-4">
+                            <div class="text-center p-3 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4 p-3 d-inline-flex">
+                                    <i class="fas fa-dungeon text-primary fa-3x"></i>
+                                </div>
+                                <p class="text-primary">6:00PM - 10:00PM</p>
+                                <h3 class="text-dark">Reception</h3>
+                                <!-- <p class="text-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute heart-circle " style="bottom: 0; left: -18px;">
+                        <div class="border border-2 border-primary rounded-circle p-1 bg-secondary"></div>
+                    </div>
+                    <div class="position-absolute heart-circle" style="top: 18px; right: -17px;">
+                        <div class="border border-2 border-primary rounded-circle p-1 bg-secondary"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Wedding Timeline End -->
+
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-light"><a href="#"><i class="fas fa-arrow text-light me-2"></i>Copyright &copy</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed & Developed By <a class="border-bottom" href="https://hafiz9ouman.github.io/">H. Nouman</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+
+	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+	<script src="js/simplyCountdown.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	<script>
+        // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+
+        // // default example
+        // simplyCountdown('.simply-countdown-one', {
+        //     year: d.getFullYear(),
+        //     month: d.getMonth() + 1,
+        //     day: d.getDate()
+        // });
+
+        simplyCountdown('.simply-countdown-one', {
+            year: 2024,
+            month: 1, // January is 0 in JavaScript Date object
+            day: 27,
+            hours: 5,
+            minutes: 0,
+            seconds: 0,
+            // Additional options can be added here if needed
+        });
+
+        
+    </script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </body>
+
+</html>
